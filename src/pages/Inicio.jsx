@@ -225,7 +225,7 @@ const Inicio = () => {
                     className="mapa"
                     title="Ubicación"
                     src="https://www.google.com/maps/embed?pb=!4v1753426381310!6m8!1m7!1snKqIF88qyvKjCOG7h0TKpQ!2m2!1d-0.2548547894064653!2d-78.5117179324446!3f172.25080587961452!4f-29.70537198406837!5f0.7820865974627469"
-                    width="90%"
+                    width="45%"
                     height="500"
                     style={{ border: 0 }}
                     allowFullScreen=""

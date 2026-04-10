@@ -98,7 +98,7 @@
 /*imagenes unificadas de los parrafos*/
 .imagen img {
     margin-top: 40px;
-    max-width: 100%;
+    max-width: 70%;
     height: auto;
     border: 2px solid #00000092;
     border-radius: 15px;
