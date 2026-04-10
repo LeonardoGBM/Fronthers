@@ -17,24 +17,24 @@ const Navbar = () => {
           <div className="col-6 col-md-9 d-none d-md-flex justify-content-end mt-2">
             <ul className="list-unstyled menu m-0 d-flex">
               <li className="inicio">
-                <Link to="/" className="text-reset">
+                <a to="/" className="text-reset">
                   <b>Inicio</b>
-                </Link>
+                </a>
               </li>
               <li>
-                <Link to="/Somos" className="text-reset">
+                <a to="/Somos" className="text-reset">
                   ¿Quiénes Somos?
-                </Link>
+                </a>
               </li>
               <li>
-                <Link to="/servicio" className="text-reset">
+                <a to="/servicio" className="text-reset">
                   Servicios
-                </Link>
+                </a>
               </li>
               <li>
-                <Link to="/Contactos" className="text-reset">
+                <a to="/Contactos" className="text-reset">
                   Contactos
-                </Link>
+                </a>
               </li>
             </ul>
           </div>
