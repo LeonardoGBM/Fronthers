@@ -1,6 +1,7 @@
 import React from "react";
 import "./navbarestilo.css";
 import Fronthersact from "../assets/Fronthersact.png";
+import { Link } from "react-router-dom";
 
 
 const Navbar = () => {
@@ -17,24 +18,24 @@ const Navbar = () => {
           <div className="col-6 col-md-9 d-none d-md-flex justify-content-end mt-2">
             <ul className="list-unstyled menu m-0 d-flex">
               <li className="inicio">
-                <a to="/" className="text-reset">
+                <Link to="/" className="text-reset">
                   <b>Inicio</b>
-                </a>
+                </Link>
               </li>
               <li>
-                <a to="/Somos" className="text-reset">
+                <Link to="/somos" className="text-reset">
                   ¿Quiénes Somos?
-                </a>
+                </Link>
               </li>
               <li>
-                <a to="/servicio" className="text-reset">
+                <Link to="/servicio" className="text-reset">
                   Servicios
-                </a>
+                </Link>
               </li>
               <li>
-                <a to="/Contactos" className="text-reset">
+                <Link to="/contactos" className="text-reset">
                   Contactos
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
