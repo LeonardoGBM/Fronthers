@@ -1,10 +1,10 @@
-import React, { Fragment } from "react";
+import React from "react";
 import "./footer.css";
 import Fronthersact from "../assets/Fronthersact.png";
 
 const Footer = () => {
   return (
-    <Fragment>
+    <>
       <div className="container-fluid">
         <div className="row footer pt-5 text-center text-md-start">
           <div className="col-12 col-md-6 col-lg-3 mb-4">
@@ -46,7 +46,7 @@ const Footer = () => {
           </div>
         </div>
       </div>
-    </Fragment>
+    </>
   );
 };
 
