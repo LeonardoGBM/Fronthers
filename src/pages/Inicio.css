@@ -1,0 +1,130 @@
+.container{
+    background: black;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+.page-container{
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+/*Estilo de las letras de la pagina general*/
+.descripcion{
+    font-size: 20px;
+    font-family: 'Montserrat', sans-serif; 
+    color: white;
+    text-align: center;
+}
+
+/*Botones de cards*/
+.bot{
+  margin-top: auto;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+/*Colores de las Cards*/
+.cardb {
+  background: rgb(95, 6, 115);
+  text-align: start;
+}
+.cardn {
+  background: #1F3A93;
+  text-align: start;
+}
+.cardp {
+  background: #f1c40fca;
+  text-align: start;
+}
+
+/*Propiedades comunes de las cards*/
+.cardb, .cardn, .cardp {
+  display: flex;
+  flex-direction: column;
+  height: 375px;
+  width: 105%;
+  max-width: 350px;
+  margin: 10px auto;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+/*Hovers de las cards*/
+.cardn:hover{
+    background: #1f3a938e
+}
+.cardp:hover{
+    background: #f1c40f7e;
+
+}
+.cardb:hover{
+    background: rgba(95, 6, 115, 0.549);
+}
+
+/*Textos y titulos*/
+.cardb h2,
+.cardn h2,
+.cardp h2,
+.cardb h5,
+.cardn h5,
+.cardp h5 {
+  text-align: center;
+}
+.cardb h2,
+.cardn h2,
+.cardp h2 {
+  color: green;
+  padding: 20px;
+}
+
+/*Titulos y parrafos de las secciones*/
+.contenido,
+.contenidop {
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+@media (min-width: 768px) {
+    .contenido,
+    .contenidop {
+        padding-left: 100px;
+        padding-right: 0;
+    }
+}
+
+/*imagenes unificadas de los parrafos*/
+.imagen img {
+    margin-top: 40px;
+    max-width: 100%;
+    height: auto;
+    border: 2px solid #00000092;
+    border-radius: 15px;
+}
+/*Hover de las imagenes unificadas*/
+.imagen img:hover {
+    transform: scale(1.05);
+    filter: brightness(50%);
+    transition: transform 0.3s ease;
+}
+
+/*Seccion del los paquetes título*/
+.titulo2{
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+
+/*Titulo de la seccion de ubicación*/
+.ubicacion{
+    margin-top: 100px;
+    margin-bottom: 20px;
+}
+
+/*Mapa*/
+.mapa{
+    margin-bottom: 100px;
+    border-radius: 20px;
+}
+
