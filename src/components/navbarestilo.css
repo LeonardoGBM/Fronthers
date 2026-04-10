@@ -1,0 +1,43 @@
+.navbar {
+  background: black;
+  color: white;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 20px;
+  border: 3px solid #7600FF;
+  border-radius: 0 0 25px 25px;
+  z-index: 1050;
+}
+
+.menu {
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+}
+
+.menu a {
+  text-decoration: none;
+}
+
+.menu li {
+  margin-left: 20px;
+}
+
+.menu li:first-child {
+  margin-left: 0;
+}
+
+.inicio {
+  color: #B069FF;
+  padding-right: 20px;
+}
+
+.logo {
+  max-height: 50px;
+  width: auto;
+}
+.collapse li{
+  color: white;
+}
+.collapse a{
+    text-decoration: none;
+}
