@@ -1,11 +1,11 @@
-import React, { Fragment } from "react";
+import React from "react";
 import "./navbarestilo.css";
 import Fronthersact from "../assets/Fronthersact.png";
-import { Link } from "react-router-dom";
+
 
 const Navbar = () => {
   return (
-    <Fragment>
+    <>
       <div className="container-fluid">
         <div className="row fixed-top navbar align-items-center">
           {/* Logo */}
@@ -61,29 +61,29 @@ const Navbar = () => {
         >
           <ul className="list-unstyled">
             <li>
-              <Link to="/" className="text-reset d-block py-2">
+              <a to="/" className="text-reset d-block py-2">
                 <b>Inicio</b>
-              </Link>
+              </a>
             </li>
             <li>
-              <Link to="/Somos" className="text-reset d-block py-2">
+              <a to="/Somos" className="text-reset d-block py-2">
                 ¿Quiénes Somos?
-              </Link>
+              </a>
             </li>
             <li>
-              <Link to="/servicio" className="text-reset d-block py-2">
+              <a to="/servicio" className="text-reset d-block py-2">
                 Servicios
-              </Link>
+              </a>
             </li>
             <li>
-              <Link to="/Contactos" className="text-reset d-block py-2">
+              <a to="/Contactos" className="text-reset d-block py-2">
                 Contactos
-              </Link>
+              </a>
             </li>
           </ul>
         </div>
       </div>
-    </Fragment>
+    </>
   );
 };
 
