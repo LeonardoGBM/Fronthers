@@ -45,7 +45,7 @@ const Inicio = () => {
             {/*Seccion de por que tener una pagina web*/}
 
             <div className="row">
-              <div className="col-12 col-md-6 text-start">
+              <div className="col-12 col-md-6 text-start mt-5">
                 <h2 className="contenido">¿Por qué tener una página web?</h2>
                 <p className="contenidop">
                   Tener una página web es fundamental en la actualidad porque
@@ -60,7 +60,7 @@ const Inicio = () => {
                   cada vez más digitalizado.
                 </p>
               </div>
-              <div className="col-12 col-md-6">
+              <div className="col-12 col-md-6 mt-3">
                 <div className="col imagen">
                   <img src={img1} alt="imagen" />
                 </div>
@@ -68,13 +68,13 @@ const Inicio = () => {
             </div>
 
             <div className="row">
-              <div className="col-12 col-md-6">
+              <div className="col-12 col-md-6 mt-3">
                 <div className="col imagen">
                   <img src={img2} alt="imagen" />
                 </div>
               </div>
 
-              <div className="col-12 col-md-6 text-start">
+              <div className="col-12 col-md-6 text-start mt-5">
                 <h2 className="contenido">
                   ¿Por qué confiar en nuestro servicio técnico?
                 </h2>
@@ -94,7 +94,7 @@ const Inicio = () => {
 
             {/*Servicion de licencias de windows */}
             <div className="row">
-              <div className="col-12 col-md-6 text-start">
+              <div className="col-12 col-md-6 text-start mt-5">
                 <h2 className="contenido">Licencias de windows</h2>
                 <p className="contenidop">
                   Ofrecemos licencias originales de Windows para que tu equipo
@@ -108,7 +108,7 @@ const Inicio = () => {
                   el proceso de activación e instalación.
                 </p>
               </div>
-              <div className="col-12 col-md-6">
+              <div className="col-12 col-md-6 mt-3">
                 <div className="col-md imagen">
                   <img src={img3} alt="imagen" />
                 </div>
@@ -118,12 +118,12 @@ const Inicio = () => {
             {/*Asesoramiento */}
 
             <div className="row">
-              <div className="col-12 col-md-6">
+              <div className="col-12 col-md-6 mt-3">
                 <div className="col-md imagen">
                   <img src={img4} alt="imagen" />
                 </div>
               </div>
-              <div className="col-12 col-md-6 text-start">
+              <div className="col-12 col-md-6 text-start mt-5">
                 <h2 className="contenido">
                   Asesoramiento y cotización de partes de computadora
                 </h2>
