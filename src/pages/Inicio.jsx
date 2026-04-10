@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React from "react";
 import Navbar from "../components/navbar";
 import Footer from "../components/footer";
 import Carrusel from "../components/carrusel";
@@ -27,7 +27,7 @@ const Inicio = () => {
   };
 
   return (
-    <Fragment>
+    <>
       <Navbar />
       <Carrusel />
       <div className="page-container container">
@@ -239,7 +239,7 @@ const Inicio = () => {
         </div>
       </div>
       <Footer />
-    </Fragment>
+    </>
   );
 };
 export default Inicio;
