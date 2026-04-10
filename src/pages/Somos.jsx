@@ -1,11 +1,11 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import Footer from '../components/footer';
 import Navbar from '../components/navbar';
 import './Somos.css';
 
 const Somos = () => {
     return (
-        <Fragment>
+        <>
             <Navbar />
 
             <div className="container-fluid">
@@ -20,7 +20,7 @@ const Somos = () => {
                 </div>
             </div>
             <Footer />
-        </Fragment>
+        </>
     );
 }
 

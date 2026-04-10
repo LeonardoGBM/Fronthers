@@ -1,10 +1,10 @@
-import React, { Fragment } from "react";
+import React from "react";
 import Navbar from "../components/navbar";
 import Footer from "../components/footer";
 import "./Servicio.css";
 const Servicio = () => {
   return (
-    <Fragment>
+    <>
       <Navbar />
       <div className="container-fluid">
         <div className="row fondo">
@@ -348,7 +348,7 @@ const Servicio = () => {
         </div>
       </div>
       <Footer />
-    </Fragment>
+    </>
   );
 };
 
