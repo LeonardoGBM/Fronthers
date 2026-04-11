@@ -42,7 +42,7 @@ const Footer = () => {
           </div>
 
           <div className="col-12 fronthers mt-4 mb-3">
-            &copy; FRONTHERS - 2025
+            &copy; FRONTHERS - 2026
           </div>
         </div>
       </div>

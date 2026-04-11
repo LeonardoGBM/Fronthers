@@ -1,3 +1,612 @@
-.margen{
-    margin-top: 300px;
+/* ============================================================
+   Somos.css — página "¿Quiénes Somos?" — Fronthers
+   Paleta: negro #000, oscuro #0d0d0d / #1a1a2e, violeta #7600FF, lila #B069FF
+   ============================================================ */
+
+/* ── Variables ────────────────────────────────────────────── */
+:root {
+  --s-purple:      #7600FF;
+  --s-purple-light:#B069FF;
+  --s-dark:        #0a0a0a;
+  --s-dark2:       #0d0d0d;
+  --s-dark3:       #0f0f0f;
+  --s-card-bg:     #141414;
+  --s-card-border: rgba(118, 0, 255, 0.2);
+  --s-text-muted:  #9ca3af;
+}
+
+/* ── Hero ─────────────────────────────────────────────────── */
+.somos-hero {
+  min-height: 100vh;
+  background: #0a0a0a;
+  padding-top: 100px;
+  padding-bottom: 60px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* línea decorativa superior */
+.somos-hero::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, var(--s-purple), var(--s-purple-light), transparent);
+}
+
+/* glow de fondo */
+.somos-hero::after {
+  content: '';
+  position: absolute;
+  top: 20%; left: -10%;
+  width: 500px; height: 500px;
+  background: radial-gradient(circle, rgba(118,0,255,0.12) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.somos-badge {
+  background: rgba(118, 0, 255, 0.15);
+  border: 1px solid rgba(118, 0, 255, 0.4);
+  color: var(--s-purple-light);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 6px 16px;
+  border-radius: 50px;
+}
+
+.somos-hero-title {
+  font-size: clamp(2.2rem, 5vw, 3.8rem);
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  color: #ffffff;
+}
+
+.somos-accent {
+  background: linear-gradient(90deg, var(--s-purple), var(--s-purple-light));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.somos-hero-sub {
+  font-size: 1.1rem;
+  color: var(--s-text-muted);
+  max-width: 520px;
+  line-height: 1.7;
+}
+
+/* Stats */
+.somos-stats {
+  align-items: center;
+}
+
+.somos-stat-icon {
+  font-size: 1.8rem;
+  color: var(--s-purple-light);
+  line-height: 1;
+  margin-bottom: 6px;
+}
+
+.somos-stat-label {
+  font-size: 0.8rem;
+  color: var(--s-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-top: 4px;
+}
+
+.somos-stat-divider {
+  width: 1px;
+  height: 40px;
+  background: rgba(118, 0, 255, 0.3);
+}
+
+/* Gráfico decorativo hero */
+.somos-hero-graphic {
+  width: 320px;
+  height: 320px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 40% 40%, rgba(118,0,255,0.2), rgba(176,105,255,0.05));
+  border: 1px solid rgba(118, 0, 255, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.somos-hero-graphic::before {
+  content: '';
+  position: absolute;
+  inset: -20px;
+  border-radius: 50%;
+  border: 1px dashed rgba(118, 0, 255, 0.2);
+  animation: somos-spin 20s linear infinite;
+}
+
+@keyframes somos-spin {
+  to { transform: rotate(360deg); }
+}
+
+.somos-hero-icon {
+  font-size: 7rem;
+  background: linear-gradient(135deg, var(--s-purple), var(--s-purple-light));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ── Etiqueta de sección ──────────────────────────────────── */
+.somos-section-label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--s-purple-light);
+}
+
+.somos-section-title {
+  font-size: clamp(1.6rem, 3vw, 2.4rem);
+  font-weight: 800;
+  color: #ffffff;
+  letter-spacing: -0.01em;
+}
+
+/* ── Misión / Visión ──────────────────────────────────────── */
+.somos-mv {
+  background: #0d0d0d;
+}
+
+.somos-mv-card {
+  background: #141414;
+  border: 1px solid rgba(118, 0, 255, 0.18);
+  border-radius: 16px;
+  padding: 2.5rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.somos-mv-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px rgba(118, 0, 255, 0.12);
+  border-color: rgba(118, 0, 255, 0.45);
+}
+
+.somos-mv-card--accent {
+  background: #111111;
+  border-color: rgba(176, 105, 255, 0.2);
+}
+
+.somos-mv-icon-wrap {
+  width: 64px;
+  height: 64px;
+  border-radius: 16px;
+  background: rgba(118, 0, 255, 0.15);
+  border: 1px solid rgba(118, 0, 255, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.somos-mv-icon-wrap i {
+  font-size: 1.8rem;
+  color: var(--s-purple-light);
+}
+
+.somos-mv-heading {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.somos-mv-text {
+  color: var(--s-text-muted);
+  line-height: 1.75;
+  font-size: 0.95rem;
+}
+
+/* ── Valores ──────────────────────────────────────────────── */
+.somos-valores {
+  background: #0a0a0a;
+}
+
+.somos-valor-card {
+  background: #141414;
+  border: 1px solid rgba(118, 0, 255, 0.18);
+  border-radius: 16px;
+  padding: 2rem 1.5rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.somos-valor-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--s-purple), var(--s-purple-light));
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.somos-valor-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(118, 0, 255, 0.18);
+  border-color: rgba(118, 0, 255, 0.5);
+}
+
+.somos-valor-card:hover::before {
+  transform: scaleX(1);
+}
+
+.somos-valor-icon-wrap {
+  width: 56px;
+  height: 56px;
+  border-radius: 14px;
+  background: rgba(118, 0, 255, 0.12);
+  border: 1px solid rgba(118, 0, 255, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s ease;
+}
+
+.somos-valor-card:hover .somos-valor-icon-wrap {
+  background: rgba(118, 0, 255, 0.25);
+}
+
+.somos-valor-icon-wrap i {
+  font-size: 1.5rem;
+  color: var(--s-purple-light);
+}
+
+.somos-valor-title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.somos-valor-desc {
+  font-size: 0.875rem;
+  color: var(--s-text-muted);
+  line-height: 1.65;
+}
+
+/* ── Equipo ───────────────────────────────────────────────── */
+.somos-equipo {
+  background: #0d0d0d;
+}
+
+.somos-miembro-card {
+  background: #141414;
+  border: 1px solid rgba(118, 0, 255, 0.18);
+  border-radius: 20px;
+  padding: 2.5rem 1.5rem 2rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.somos-miembro-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 24px 48px rgba(118, 0, 255, 0.18);
+  border-color: rgba(118, 0, 255, 0.5);
+}
+
+.somos-miembro-img-wrap {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  padding: 3px;
+  background: linear-gradient(135deg, var(--s-purple), var(--s-purple-light));
+}
+
+.equipo-foto {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border: 3px solid #141414;
+}
+
+.somos-miembro-nombre {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.somos-miembro-rol {
+  font-size: 0.85rem;
+  color: var(--s-purple-light);
+  font-weight: 500;
+}
+
+.somos-miembro-social {
+  display: flex;
+  justify-content: center;
+  gap: 0.75rem;
+}
+
+.somos-social-link {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(118, 0, 255, 0.12);
+  border: 1px solid rgba(118, 0, 255, 0.25);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--s-purple-light);
+  font-size: 0.9rem;
+  text-decoration: none;
+  transition: background 0.25s ease, border-color 0.25s ease, transform 0.25s ease;
+}
+
+.somos-social-link:hover {
+  background: rgba(118, 0, 255, 0.3);
+  border-color: var(--s-purple);
+  transform: translateY(-2px);
+  color: #ffffff;
+}
+
+/* ── CTA ──────────────────────────────────────────────────── */
+.somos-cta {
+  background: #0d0d0d;
+  position: relative;
+  overflow: hidden;
+}
+
+.somos-cta::before {
+  content: '';
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  width: 600px; height: 300px;
+  background: radial-gradient(ellipse, rgba(118,0,255,0.15) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.somos-cta-inner {
+  max-width: 600px;
+  position: relative;
+  z-index: 1;
+}
+
+.somos-cta-icon {
+  font-size: 3rem;
+  color: var(--s-purple-light);
+}
+
+.somos-cta-title {
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  font-weight: 800;
+  color: #ffffff;
+  letter-spacing: -0.01em;
+}
+
+.somos-cta-sub {
+  color: var(--s-text-muted);
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+.somos-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  background: linear-gradient(135deg, var(--s-purple), var(--s-purple-light));
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 1rem;
+  padding: 14px 36px;
+  border-radius: 50px;
+  text-decoration: none;
+  transition: opacity 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+  box-shadow: 0 8px 24px rgba(118, 0, 255, 0.35);
+}
+
+.somos-cta-btn:hover {
+  opacity: 0.9;
+  transform: translateY(-3px);
+  box-shadow: 0 14px 32px rgba(118, 0, 255, 0.5);
+  color: #ffffff;
+}
+
+/* ── Responsivo ───────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .somos-hero {
+    padding-top: 90px;
+    min-height: auto;
+    padding-bottom: 50px;
+  }
+
+  .somos-hero-title {
+    font-size: 2rem;
+  }
+
+  .somos-mv-card,
+  .somos-valor-card,
+  .somos-miembro-card {
+    padding: 1.75rem 1.25rem;
+  }
+}
+
+@media (max-width: 375px) {
+  .somos-hero-title {
+    font-size: 1.7rem;
+  }
+
+  .somos-stat-num {
+    font-size: 1.5rem;
+  }
+
+  .somos-cta-btn {
+    padding: 12px 28px;
+    font-size: 0.9rem;
+  }
+}
+
+/* ── ¿Por qué elegirnos? ──────────────────────────────────── */
+.somos-porq {
+  background: #0d0d0d;
+}
+
+.somos-porq-card {
+  background: #141414;
+  border: 1px solid rgba(118, 0, 255, 0.18);
+  border-radius: 16px;
+  padding: 2rem 1.75rem;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.somos-porq-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px rgba(118, 0, 255, 0.14);
+  border-color: rgba(118, 0, 255, 0.45);
+}
+
+.somos-porq-num {
+  position: absolute;
+  top: 1.25rem;
+  right: 1.5rem;
+  font-size: 3rem;
+  font-weight: 900;
+  color: rgba(118, 0, 255, 0.08);
+  line-height: 1;
+  user-select: none;
+}
+
+/* ── Tecnologías ──────────────────────────────────────────── */
+.somos-tech {
+  background: #0a0a0a;
+}
+
+.somos-tech-card {
+  background: #141414;
+  border: 1px solid rgba(118, 0, 255, 0.18);
+  border-radius: 14px;
+  padding: 1.5rem 1rem;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.somos-tech-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 28px rgba(118, 0, 255, 0.15);
+  border-color: rgba(118, 0, 255, 0.45);
+}
+
+.somos-tech-icon {
+  font-size: 2.2rem;
+  color: var(--s-purple-light);
+}
+
+.somos-tech-name {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--s-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+/* ── Historia / Timeline ──────────────────────────────────── */
+.somos-historia {
+  background: #0d0d0d;
+}
+
+.somos-timeline {
+  position: relative;
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.somos-timeline::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 0; bottom: 0;
+  width: 2px;
+  background: linear-gradient(180deg, var(--s-purple), var(--s-purple-light), transparent);
+  transform: translateX(-50%);
+}
+
+.somos-hito {
+  position: relative;
+  width: 50%;
+  padding-bottom: 2.5rem;
+}
+
+.somos-hito--left {
+  left: 0;
+  padding-right: 3rem;
+  text-align: right;
+}
+
+.somos-hito--right {
+  left: 50%;
+  padding-left: 3rem;
+  text-align: left;
+}
+
+.somos-hito-dot {
+  position: absolute;
+  top: 0.4rem;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--s-purple);
+  border: 2px solid var(--s-purple-light);
+  box-shadow: 0 0 10px rgba(118, 0, 255, 0.5);
+}
+
+.somos-hito--left .somos-hito-dot  { right: -7px; }
+.somos-hito--right .somos-hito-dot { left: -7px; }
+
+.somos-hito-card {
+  background: #141414;
+  border: 1px solid rgba(118, 0, 255, 0.18);
+  border-radius: 14px;
+  padding: 1.5rem;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.somos-hito-card:hover {
+  border-color: rgba(118, 0, 255, 0.4);
+  box-shadow: 0 8px 24px rgba(118, 0, 255, 0.1);
+}
+
+.somos-hito-año {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--s-purple-light);
+}
+
+.somos-hito-titulo {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+/* Timeline en móvil — todo a la derecha */
+@media (max-width: 640px) {
+  .somos-timeline::before {
+    left: 8px;
+  }
+
+  .somos-hito,
+  .somos-hito--left,
+  .somos-hito--right {
+    width: 100%;
+    left: 0;
+    padding-left: 2.5rem;
+    padding-right: 0;
+    text-align: left;
+  }
+
+  .somos-hito--left .somos-hito-dot,
+  .somos-hito--right .somos-hito-dot {
+    left: 2px;
+    right: auto;
+  }
 }
