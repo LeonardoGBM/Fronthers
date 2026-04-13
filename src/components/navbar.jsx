@@ -1,90 +1,83 @@
-import React from "react";
+import { useState, useEffect } from "react";
+import { Link, useLocation } from "react-router-dom";
 import "./navbarestilo.css";
 import Fronthersact from "../assets/Fronthersact.png";
-import { Link } from "react-router-dom";
 
+const LINKS = [
+  { to: "/",          label: "Inicio"         },
+  { to: "/somos",     label: "¿Quiénes Somos?" },
+  { to: "/servicio",  label: "Servicios"       },
+  { to: "/contactos", label: "Contactos"       },
+];
 
 const Navbar = () => {
+  const location = useLocation();
+  const [scrolled, setScrolled]   = useState(false);
+  const [menuOpen, setMenuOpen]   = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 20);
+    window.addEventListener("scroll", onScroll);
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  // cierra el menú al cambiar de ruta
+  useEffect(() => { setMenuOpen(false); }, [location]);
+
   return (
-    <>
-      <div className="container-fluid">
-        <div className="row fixed-top navbar align-items-center">
-          {/* Logo */}
-          <div className="col-6 col-md-3 d-flex justify-content-center justify-content-md-start mt-2">
-            <img src={Fronthersact} alt="logo" className="logo" />
-          </div>
+    <header className={`nb-header${scrolled ? " nb-header--scrolled" : ""}`}>
+      <div className="nb-inner">
 
-          {/* Menú para escritorio */}
-          <div className="col-6 col-md-9 d-none d-md-flex justify-content-end mt-2">
-            <ul className="list-unstyled menu m-0 d-flex">
-              <li className="inicio">
-                <Link to="/" className="text-reset">
-                  <b>Inicio</b>
-                </Link>
-              </li>
-              <li>
-                <Link to="/somos" className="text-reset">
-                  ¿Quiénes Somos?
-                </Link>
-              </li>
-              <li>
-                <Link to="/servicio" className="text-reset">
-                  Servicios
-                </Link>
-              </li>
-              <li>
-                <Link to="/contactos" className="text-reset">
-                  Contactos
-                </Link>
-              </li>
-            </ul>
-          </div>
+        {/* Logo */}
+        <Link to="/" className="nb-logo-link">
+          <img src={Fronthersact} alt="Fronthers" className="nb-logo" />
+        </Link>
 
-          {/* Menú hamburguesa para móviles */}
-          <div className="col-6 d-md-none d-flex justify-content-end mt-2">
-            <button
-              className="btn btn-outline-light"
-              type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#mobileMenu"
-              aria-expanded="false"
-              aria-controls="mobileMenu"
+        {/* Nav escritorio */}
+        <nav className="nb-nav" aria-label="Navegación principal">
+          {LINKS.map(({ to, label }) => (
+            <Link
+              key={to}
+              to={to}
+              className={`nb-link${location.pathname === to ? " nb-link--active" : ""}`}
             >
-              ☰
-            </button>
-          </div>
-        </div>
+              {label}
+            </Link>
+          ))}
+          <Link to="/contactos" className="nb-cta-btn">
+            Empecemos <i className="bi bi-arrow-right ms-1"></i>
+          </Link>
+        </nav>
 
-        {/* Menú colapsable en móviles */}
-        <div
-          className="collapse d-md-none bg-black text-center pt-3"
-          id="mobileMenu"
+        {/* Botón hamburguesa */}
+        <button
+          className={`nb-burger${menuOpen ? " nb-burger--open" : ""}`}
+          onClick={() => setMenuOpen(!menuOpen)}
+          aria-label="Abrir menú"
+          aria-expanded={menuOpen}
         >
-          <ul className="list-unstyled">
-            <li>
-              <a to="/" className="text-reset d-block py-2">
-                <b>Inicio</b>
-              </a>
-            </li>
-            <li>
-              <a to="/Somos" className="text-reset d-block py-2">
-                ¿Quiénes Somos?
-              </a>
-            </li>
-            <li>
-              <a to="/servicio" className="text-reset d-block py-2">
-                Servicios
-              </a>
-            </li>
-            <li>
-              <a to="/Contactos" className="text-reset d-block py-2">
-                Contactos
-              </a>
-            </li>
-          </ul>
-        </div>
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
       </div>
-    </>
+
+      {/* Menú móvil */}
+      <div className={`nb-mobile${menuOpen ? " nb-mobile--open" : ""}`}>
+        {LINKS.map(({ to, label }) => (
+          <Link
+            key={to}
+            to={to}
+            className={`nb-mobile-link${location.pathname === to ? " nb-mobile-link--active" : ""}`}
+          >
+            {label}
+          </Link>
+        ))}
+        <Link to="/contactos" className="nb-mobile-cta">
+          Empecemos <i className="bi bi-arrow-right ms-2"></i>
+        </Link>
+      </div>
+    </header>
   );
 };
 

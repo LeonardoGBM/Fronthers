@@ -1,33 +1,187 @@
-.footer {
-  background: black;
-  color: white;
+/* ============================================================
+   footer.css — Footer Fronthers
+   ============================================================ */
+
+:root {
+  --ft-purple:       #7600FF;
+  --ft-purple-light: #B069FF;
+  --ft-bg:           #0a0a0a;
+  --ft-border:       rgba(118, 0, 255, 0.2);
+  --ft-text-muted:   #6b7280;
+  --ft-text:         #9ca3af;
+}
+
+/* ── Contenedor ───────────────────────────────────────────── */
+.ft-footer {
+  background: var(--ft-bg);
+  color: var(--ft-text);
   font-family: 'Montserrat', sans-serif;
-  border: 3px solid #7600FF;
-  font-size: 1rem;
-  padding-bottom: 2rem;
+  position: relative;
 }
 
-.footer ul {
-  list-style: none;
-  padding-left: 0;
-  margin: 0;
+/* Línea superior con gradiente */
+.ft-top-line {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--ft-purple), var(--ft-purple-light), transparent);
 }
 
-.logo {
-  width: 100%;
-  max-width: 200px;
-  height: auto;
+/* ── Grid principal ───────────────────────────────────────── */
+.ft-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 3rem;
+  padding: 4rem 0 3rem;
+}
+
+@media (max-width: 768px) {
+  .ft-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    padding: 3rem 0 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .ft-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}
+
+/* ── Columna marca ────────────────────────────────────────── */
+.ft-logo {
+  height: 40px;
+  width: auto;
   display: block;
 }
 
-.titulo {
-  font-size: 1.5rem;
-  margin-bottom: 1rem;
+.ft-brand-desc {
+  font-size: 0.875rem;
+  line-height: 1.7;
+  color: var(--ft-text-muted);
+  max-width: 280px;
+  margin-bottom: 1.5rem;
 }
 
-.fronthers {
-  background: black;
-  text-align: center;
-  color: #B069FF;
-  font-size: 1.2rem;
+/* Redes sociales */
+.ft-social {
+  display: flex;
+  gap: 0.6rem;
+}
+
+.ft-social-link {
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  background: rgba(118, 0, 255, 0.1);
+  border: 1px solid var(--ft-border);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--ft-purple-light);
+  font-size: 1rem;
+  text-decoration: none;
+  transition: background 0.25s ease, border-color 0.25s ease, transform 0.25s ease;
+}
+
+.ft-social-link:hover {
+  background: rgba(118, 0, 255, 0.25);
+  border-color: var(--ft-purple);
+  transform: translateY(-3px);
+  color: #ffffff;
+}
+
+/* ── Columnas de links ────────────────────────────────────── */
+.ft-col-title {
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #ffffff;
+  margin-bottom: 1.25rem;
+}
+
+.ft-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.ft-list-link {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: var(--ft-text-muted);
+  text-decoration: none;
+  font-size: 0.875rem;
+  transition: color 0.2s ease;
+}
+
+.ft-list-link:hover {
+  color: var(--ft-purple-light);
+}
+
+.ft-chevron {
+  font-size: 0.65rem;
+  color: var(--ft-purple);
+  transition: transform 0.2s ease;
+}
+
+.ft-list-link:hover .ft-chevron {
+  transform: translateX(3px);
+}
+
+/* ── Lista de contacto ────────────────────────────────────── */
+.ft-contact-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+  font-size: 0.875rem;
+  color: var(--ft-text-muted);
+}
+
+.ft-contact-icon {
+  color: var(--ft-purple-light);
+  font-size: 0.9rem;
+  margin-top: 2px;
+  flex-shrink: 0;
+}
+
+/* ── Barra inferior ───────────────────────────────────────── */
+.ft-bottom {
+  border-top: 1px solid var(--ft-border);
+  padding: 1.5rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.ft-copy {
+  font-size: 0.8rem;
+  color: var(--ft-text-muted);
+}
+
+.ft-made {
+  font-size: 0.8rem;
+  color: var(--ft-text-muted);
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.ft-heart {
+  color: var(--ft-purple-light);
+  font-size: 0.75rem;
+}
+
+@media (max-width: 480px) {
+  .ft-bottom {
+    flex-direction: column;
+    text-align: center;
+  }
 }
